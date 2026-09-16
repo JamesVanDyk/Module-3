@@ -3,8 +3,6 @@ from ceaserCipher import encrypt, decrypt
 
 SENDER_PRI_KEY = 3
 SENDER_PUB_KEY = 3
-RECEIVER_PRI_KEY = 3
-RECEIVER_PUB_KEY = 3
 
 def createSignature():
     message = input("please enter your message. ")
