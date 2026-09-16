@@ -1,25 +1,29 @@
-def encrypt(message):
+def encrypt(message, ekey = 5):
     message = list(message)
-    for item in range(len(message)):
-        message[item] = chr(ord(message[item])+5)
-    encryptedMessage = ''.join(message)
-    print(encryptedMessage)
 
-def decrypt(cipher):
-    
+    for item in range(len(message)):
+        message[item] = chr(ord(message[item]) + ekey)
+
+    encryptedMessage = ''.join(message)
+    return encryptedMessage
+
+def decrypt(cipher, dkey = 5):
+    cipher = cipher.strip()
     cipher = list(cipher)
+    
     for item in range(len(cipher)):
-        cipher[item] = chr(ord(cipher[item])-5)
+        cipher[item] = chr(ord(cipher[item]) - dkey)
+        
     decryptedMessage = ''.join(cipher)
-    print(decryptedMessage)
+    return decryptedMessage
 
 while __name__ == "__main__":
     eod = input("encrypt or decrypt message? (e or d) ")
     if eod == "e":
-        message = input("enter your message. ")
-        encrypt(message)
+        message = input("cipher enter your message. ")
+        print(encrypt(message))
     elif eod == "d":
         cipher = input("enter the cipher. ")
-        decrypt(cipher)
+        print(decrypt(cipher))
     else:
         print("invalid input.\nTry again.")

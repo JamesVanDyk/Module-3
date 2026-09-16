@@ -1,6 +1,6 @@
 import hashlib
 
-message = input("enter your message ")
+
 
 def messageHash(message):
     byteString = message.encode('utf-8')
@@ -9,4 +9,6 @@ def messageHash(message):
 
     return hashString
 
-print(messageHash(message))
+while __name__ == "__main__":
+    message = input("hash enter your message. ")
+    print(messageHash(message))
